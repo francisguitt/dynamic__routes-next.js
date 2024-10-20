@@ -6,7 +6,7 @@ import baseUrl from "./services/page";
 
 async function getData(): Promise<productsDataTypes[]> {
     // const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-    const response = await fetch(`${baseUrl.url}/products`, {
+    const response = await fetch(`${baseUrl.url}`, {
         // cache: "no-store",
         next: {
             revalidate: 1
@@ -25,6 +25,7 @@ export default async function HomePage() {
             <div className="grid  px-2 gap-1 sm:drid-cols-1  md:grid-cols-2">
                 {data.map((item: productsDataTypes) => (
                     <Products
+                        key={item.id}
                         id={item.id}
                         title={item.title}
                         price={item.price}
