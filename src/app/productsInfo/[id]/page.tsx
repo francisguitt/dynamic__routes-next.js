@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Loading from "@/components/loading";
+import baseUrl from "@/app/services/page";
 import { Suspense } from "react";
 
 interface PropsId {
@@ -14,7 +15,7 @@ interface PropsId {
 
 export default async function InfoId({ id }: PropsId) {
     // const sleep = (ms:number)=> new Promise((resolve)=>setTimeout(resolve, ms));
-    const response = await fetch(`https://fakestoreapi.com/products/${id}`, { cache: "no-cache" })
+    const response = await fetch(`${baseUrl.url}/${id}`, { cache: "no-cache" })
     // await sleep(3000);
     const data: PropsId = await response.json();
     return (

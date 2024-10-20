@@ -2,10 +2,11 @@
 
 import Products from "@/components/products";
 import productsDataTypes from "@/types";
+import baseUrl from "./services/page";
 
 async function getData(): Promise<productsDataTypes[]> {
     // const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-    const response = await fetch(`https://fakestoreapi.com/products`, {
+    const response = await fetch(`${baseUrl.url}/products`, {
         // cache: "no-store",
         next: {
             revalidate: 1
