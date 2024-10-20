@@ -14,7 +14,7 @@ interface PropsId {
 
 export default async function InfoId({ params }: PropsId) {
     // const sleep = (ms:number)=> new Promise((resolve)=>setTimeout(resolve, ms));
-    const response = await fetch(`${baseUrl.url}/${params.params}`, { cache: "no-cache" })
+    const response = await fetch(`${baseUrl.urlUsers}/${params.params}`, { cache: "no-cache" })
     // await sleep(3000);
     const data: PropsId = await response.json();
     return (

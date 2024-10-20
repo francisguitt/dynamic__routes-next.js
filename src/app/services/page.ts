@@ -1,9 +1,11 @@
 
 type baseUrlProps = {
-    url: string;
+    urlProducts: string;
+    urlUsers:string;
 }
 const baseUrl: baseUrlProps = {
-    url: "https://fakestoreapi.com/products"
+    urlProducts: "https://fakestoreapi.com/products",
+    urlUsers: "https://fakestoreapi.com/users"
 }
 
 

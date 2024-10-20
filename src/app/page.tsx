@@ -6,7 +6,7 @@ import baseUrl from "./services/page";
 
 async function getData(): Promise<productsDataTypes[]> {
     // const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-    const response = await fetch(`${baseUrl.url}`, {
+    const response = await fetch(`${baseUrl.urlProducts}`, {
         // cache: "no-store",
         next: {
             revalidate: 1
@@ -22,6 +22,8 @@ export default async function HomePage() {
 
     return (
         <div className="max-w-7xl mx-auto ">
+            <div className="text-white font-bold text-3xl text-center py-5">Produtos</div>
+            <div className="border"></div>
             <div className="grid  px-2 gap-1 sm:drid-cols-1  md:grid-cols-2">
                 {data.map((item: productsDataTypes) => (
                     <Products
@@ -32,9 +34,7 @@ export default async function HomePage() {
                         description={item.description}
                         category={item.category}
                         image={item.image}
-
                     />
-
                 ))}
 
             </div>
